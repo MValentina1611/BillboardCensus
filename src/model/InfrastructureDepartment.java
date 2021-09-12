@@ -56,6 +56,19 @@ public class InfrastructureDepartment {
 		}
 	}
 	
+	
+	public void exportData() throws IOException
+	{
+		FileWriter fw = new FileWriter( FILE_IMPORT_BILLBOARDS_CSV_PATH, false );
+		
+		for( int i = 0; i < billboards.size(); i++ )
+		{
+			Billboard billboardToRegister = billboards.get(i);
+			fw.write(billboardToRegister.getWidth() + "|" + billboardToRegister.getHeight()+"|"+ billboardToRegister.isInUse() + "|"+ billboardToRegister.getBrand()+"\n");
+		}
+		fw.close();
+	}
+	
 	public void exportDangerousBillboardReport() throws IOException
 	{
 		FileWriter fw = new FileWriter( FILE_EXPORT_DANGEORUS_TXT_PATH, false );
@@ -82,7 +95,10 @@ public class InfrastructureDepartment {
 		while( line != null )
 		{
 			String [] info = line.split("|");
-			addBillboard(Double.parseDouble(info[0]), Double.parseDouble(info[1]), Boolean.parseBoolean(info[2]), info[3]);
+			double weight = Double.parseDouble(info[0]);
+			double height = Double.parseDouble(info[1]);
+			
+			addBillboard(weight, height, Boolean.parseBoolean(info[2]), info[3]);
 			
 			line = br.readLine();
 		}	

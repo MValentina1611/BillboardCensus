@@ -1,22 +1,118 @@
 package ui;
-import model.InfrastructureDepartment;
 
+import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import java.util.Scanner;
+
+import model.InfrastructureDepartment;
 
 public class Main {
 
 	public static final int EXIT_OPTION = 5;
+	private Scanner reader;
+	private InfrastructureDepartment inDep;
+	
+	
+	public Main() throws IOException
+	{
+		reader = new Scanner(System.in);
+		inDep = new InfrastructureDepartment();
+		inDep.importData();
+	}
+	
+	
+	public static void main(String args[]) throws IOException
+	{
+		System.out.println("The App is initializing...");
+		
+		Main main = new Main();
+		
+		int menuOp = 0;
 
+		do
+		{
+			menuOp = main.showMenu();
+			main.executeOptions(menuOp);
+
+		}while( menuOp != 4 );
+				
+	}//Main method ends.
 	
-	public Main()
+	public int showMenu() throws IOException 
 	{
+		int menuOp = 0;
+
+		String menu = 
+			"WELCOME TO THE BILLBOARD CENSUS MANAGER\n" +
+			"Pick an option \n" +
+			"(1) Add Billboard\n" +
+			"(2) Show Billboards\n"+
+			"(3) Export and show dangerous billboard report\n" +								
+			"(4) Exit";
 		
+		System.out.println(menu);
+		menuOp = reader.nextInt();
+		
+		return menuOp;
+
+	}//Method ends
+	
+	public void executeOptions( int Option ) throws IOException
+	{
+		switch( Option ) 
+		{
+
+			case 1:
+				System.out.println (addNewBillboard() );
+				break;
+			case 2:
+				System.out.println("Show billboards");
+				break;
+	
+			case 3:
+				System.out.println("Dangerous report");
+				break;
+		
+			case 4:
+				System.out.println("Bye");
+				break;
+			default:
+				System.out.println("Error, invalid option");
+				
+		}//Switch ends
+		
+	}//Method ends
+	
+	public String addNewBillboard() throws IOException
+	{
+		String addConfirm = "";
+		String billboardInfo = ""; 
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		
+		System.out.println("Type the billboard's info separating each camp by \"++\" " +
+		"Example: 300 <width> ++ 400 <height> ++ true <is in Use> ++ Caracol <brand>" );
+			
+		billboardInfo = br.readLine();
+			
+		if(billboardInfo != null )
+		{
+			String [] info = billboardInfo.split("\\++");
+			
+			
+			//System.out.println(Arrays.toString(info));
+			
+			inDep.addBillboard(Double.parseDouble(info[0]), Double.parseDouble(info[1]), Boolean.parseBoolean(info[2]), info[3]);
+			inDep.exportData();			
+			addConfirm = "THE BILLBOARD WAS SUCCESFULLY ADDED";
+		}	
+				
+		return addConfirm;
 	}
 	
-	public static void main(String args[])
-	{
-		
-	}
 	
-	
-	
+
 }
