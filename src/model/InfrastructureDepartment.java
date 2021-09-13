@@ -12,21 +12,23 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+ 
 
 public class InfrastructureDepartment {
 	
 	//public static final String BILLBOARD_FILE_NAME = "data/billboard.bbd";
 	private String FILE_EXPORT_DANGEORUS_TXT_PATH = "data/report.txt";
 	private String FILE_IMPORT_BILLBOARDS_CSV_PATH = "data/BillboardDataExported.csv";
-	private String FILE_SAVE_PATH = "data/serializedBillboards";
+	private String FILE_EXPORT_BILLBOARDS_CSV_PATH = "data/BillboardDataExported.csv";
+	private String FILE_SAVE_PATH = "data/serializedBillboards.byteCode";
+	private List<Billboard> dangerousBillboards;
 	private List<Billboard> billboards;
-
 	
 	//Builder
 	public InfrastructureDepartment() {
 		
 		billboards = new ArrayList <Billboard>();
-		
+		dangerousBillboards = new ArrayList <Billboard>();
 		
 	}
 	
@@ -59,13 +61,11 @@ public class InfrastructureDepartment {
 	
 	public void exportData() throws IOException
 	{
-		FileWriter fw = new FileWriter( FILE_IMPORT_BILLBOARDS_CSV_PATH, false );
-		
-		for( int i = 0; i < billboards.size(); i++ )
-		{
-			Billboard billboardToRegister = billboards.get(i);
-			fw.write(billboardToRegister.getWidth() + "|" + billboardToRegister.getHeight()+"|"+ billboardToRegister.isInUse() + "|"+ billboardToRegister.getBrand()+"\n");
-		}
+		FileWriter fw = new FileWriter( FILE_EXPORT_BILLBOARDS_CSV_PATH, true );
+			
+		Billboard newBillboard = billboards.get(billboards.size()-1);
+			fw.write("\n"+newBillboard.getWidth() + "|" + newBillboard.getHeight()+"|"+ newBillboard.isInUse() + "|"+ newBillboard.getBrand());
+			
 		fw.close();
 	}
 	
@@ -80,8 +80,10 @@ public class InfrastructureDepartment {
 		
 			if( area >= 160 )
 			{
-				Billboard dangerousBillboards = billboards.get(i);
-				fw.write(dangerousBillboards.toString() +"\n");
+				Billboard dangerousBillboard = billboards.get(i);
+				dangerousBillboards.add(dangerousBillboard);
+				fw.write(dangerousBillboard.toString() +"\n");
+				
 			}
 		}
 		fw.close();
@@ -94,16 +96,38 @@ public class InfrastructureDepartment {
 		
 		while( line != null )
 		{
-			String [] info = line.split("|");
-			double weight = Double.parseDouble(info[0]);
-			double height = Double.parseDouble(info[1]);
-			
-			addBillboard(weight, height, Boolean.parseBoolean(info[2]), info[3]);
-			
+			try {
+					String [] info = line.split("\\|");
+					//if( info[0].matches("[0-9]*") && info[1].matches("[0-9]*") )
+					//{
+						double weight = Double.parseDouble(info[0]);
+						double height = Double.parseDouble(info[1]);
+						
+						//billboards.add(new Billboard(weight, height, Boolean.parseBoolean(info[2]), info[3]));
+						addBillboard(weight, height, Boolean.parseBoolean(info[2]), info[3]);
+					//}
+				}
+			catch(NumberFormatException ex)
+			{
+				
+			}
+								
 			line = br.readLine();
 		}	
 		br.close();
 	}
-		
+
+	public List<Billboard> getBillboards() {
+		return billboards;
+	}
+
+	public List<Billboard> getDangerousBillboards() {
+		return dangerousBillboards;
+	}
+
+
+	
+	 
+	
 	
 }

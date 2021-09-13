@@ -1,10 +1,11 @@
 package ui;
 
-import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import model.InfrastructureDepartment;
@@ -24,7 +25,7 @@ public class Main {
 	}
 	
 	
-	public static void main(String args[]) throws IOException
+	public static void main(String args[]) throws IOException, ClassNotFoundException
 	{
 		System.out.println("The App is initializing...");
 		
@@ -60,7 +61,7 @@ public class Main {
 
 	}//Method ends
 	
-	public void executeOptions( int Option ) throws IOException
+	public void executeOptions( int Option ) throws IOException, ClassNotFoundException
 	{
 		switch( Option ) 
 		{
@@ -69,7 +70,7 @@ public class Main {
 				System.out.println (addNewBillboard() );
 				break;
 			case 2:
-				System.out.println("Show billboards");
+				showBillboards();
 				break;
 	
 			case 3:
@@ -86,7 +87,7 @@ public class Main {
 		
 	}//Method ends
 	
-	public String addNewBillboard() throws IOException
+	public String addNewBillboard() throws IOException, ClassNotFoundException
 	{
 		String addConfirm = "";
 		String billboardInfo = ""; 
@@ -100,19 +101,44 @@ public class Main {
 			
 		if(billboardInfo != null )
 		{
-			String [] info = billboardInfo.split("\\++");
+			String [] info = billboardInfo.split("\\+\\+");
 			
 			
 			//System.out.println(Arrays.toString(info));
-			
+				
 			inDep.addBillboard(Double.parseDouble(info[0]), Double.parseDouble(info[1]), Boolean.parseBoolean(info[2]), info[3]);
 			inDep.exportData();			
 			addConfirm = "THE BILLBOARD WAS SUCCESFULLY ADDED";
+			inDep.loadBillboard();
+			inDep.saveBillboards();
 		}	
 				
 		return addConfirm;
 	}
 	
+	public void showBillboards() throws IOException
+	{
+		inDep.importData();
+		System.out.println("\t\t\t_________________");
+		System.out.println("\t\t\tBILLBOARDS");
+		System.out.println("\t\t\t_________________");
+		
+		
+		System.out.println("\tW"+ "\tH" +"\tinUse" +"\tBrand");
+        for (int i = 0; i <= inDep.getBillboards().size()-1; i++) 
+        {
+        	System.out.print( "\t"+ inDep.getBillboards().get(i).getWidth());
+        	System.out.print("\t"+ inDep.getBillboards().get(i).getHeight());
+        	System.out.print("\t"+inDep.getBillboards().get(i).isInUse());
+        	System.out.println("\t"+inDep.getBillboards().get(i).getBrand());
+        	
+        }
+		
+	}
 	
+	public void exportDangerousReport()
+	{
+		
+	}
 
 }
