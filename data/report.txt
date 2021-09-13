@@ -101,3 +101,14 @@
 300.0|400.0|true|Caracol
 500.0|400.0|false|RCN
 200.0|100.0|true|Jumbo
+10.0|30.0|false|Exito
+100.0|2.0|false|YOI
+100.0|23.0|true|LG
+21.0|47.0|true|D1
+39.0|32.0|false|Netflix
+400.0|80.0|true|Linux
+300.0|129.0|true|Samsung
+300.0|12.0|true|Colombina
+400.0|2.0|true|Metro
+10.0|23.0|false|Electrolux
+300.0|200.0|true|TNT

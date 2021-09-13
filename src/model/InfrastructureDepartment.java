@@ -75,7 +75,7 @@ public class InfrastructureDepartment {
 		
 		for( int i = 0; i < billboards.size(); i++ )
 		{
-			Double area = billboards.get(i).calculateArea(billboards.get(i).getWidth(),billboards.get(i).getHeight());
+			double area = billboards.get(i).calculateArea(billboards.get(i).getWidth(),billboards.get(i).getHeight());
 		
 			if( area >= 160 )
 			{
@@ -95,21 +95,15 @@ public class InfrastructureDepartment {
 		
 		while( line != null )
 		{
-			try {
-					String [] info = line.split("\\|");
-					//if( info[0].matches("[0-9]*") && info[1].matches("[0-9]*") )
-					//{
-						double weight = Double.parseDouble(info[0]);
-						double height = Double.parseDouble(info[1]);
-						
-						//billboards.add(new Billboard(weight, height, Boolean.parseBoolean(info[2]), info[3]));
-						addBillboard(weight, height, Boolean.parseBoolean(info[2]), info[3]);
-					//}
-				}
-			catch(NumberFormatException ex)
+			try 
 			{
+				String [] info = line.split("\\|");
+				double weight = Double.parseDouble(info[0]);
+				double height = Double.parseDouble(info[1]);						
+				addBillboard(weight, height, Boolean.parseBoolean(info[2]), info[3]);
 				
 			}
+			catch(NumberFormatException ex){}
 								
 			line = br.readLine();
 		}	

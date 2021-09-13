@@ -1,8 +1,6 @@
 package ui;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import model.InfrastructureDepartment;
@@ -52,7 +50,7 @@ public class Main {
 		
 		System.out.println(menu);
 		menuOp = reader.nextInt();
-		
+		reader.nextLine();
 		return menuOp;
 
 	}//Method ends
@@ -87,25 +85,22 @@ public class Main {
 	{
 		String addConfirm = "";
 		String billboardInfo = ""; 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		
 		
 		System.out.println("Type the billboard's info separating each camp by \"++\" " +
 		"Example: 300 <width> ++ 400 <height> ++ true <is in Use> ++ Caracol <brand>" );
 			
-		billboardInfo = br.readLine();
-		//br.close();		
+		billboardInfo = reader.nextLine();
+			
 		if(billboardInfo != null )
 		{
 			String [] info = billboardInfo.split("\\+\\+");
-			
-			
-			//System.out.println(Arrays.toString(info));
-				
+					
 			inDep.addBillboard(Double.parseDouble(info[0]), Double.parseDouble(info[1]), Boolean.parseBoolean(info[2]), info[3]);
 			inDep.exportData();			
-			addConfirm = "THE BILLBOARD WAS SUCCESFULLY ADDED";
-			inDep.loadBillboard();
+			addConfirm = "THE BILLBOARD WAS SUCCESFULLY ADDED\n";
+			
 			inDep.saveBillboards();
 		}	
 			
@@ -116,7 +111,7 @@ public class Main {
 	{
 		//inDep.importData();
 		System.out.println("\t\t\t_________________");
-		System.out.println("\t\t\tBILLBOARDS");
+		System.out.print("\t\t\tBILLBOARDS");
 		System.out.println("\t\t\t_________________");
 		
 		
@@ -145,7 +140,7 @@ public class Main {
 		{ 
 			count++;
 	    	System.out.println( "\t"+count+ " Billboard " +inDep.getDangerousBillboards().get(i).getBrand()+" with area " + 
-	    	inDep.getBillboards().get(i).calculateArea(inDep.getBillboards().get(i).getWidth(), inDep.getBillboards().get(i).getHeight()));
+	    	inDep.getBillboards().get(i).calculateArea(inDep.getBillboards().get(i).getWidth(), inDep.getBillboards().get(i).getHeight()) + "cm^2");
 
 		}
 
