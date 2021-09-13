@@ -25,11 +25,10 @@ public class InfrastructureDepartment {
 	private List<Billboard> billboards;
 	
 	//Builder
-	public InfrastructureDepartment() {
+	public InfrastructureDepartment() throws IOException {
 		
 		billboards = new ArrayList <Billboard>();
 		dangerousBillboards = new ArrayList <Billboard>();
-		
 	}
 	
 	//Methods
@@ -82,7 +81,7 @@ public class InfrastructureDepartment {
 			{
 				Billboard dangerousBillboard = billboards.get(i);
 				dangerousBillboards.add(dangerousBillboard);
-				fw.write(dangerousBillboard.toString() +"\n");
+				fw.write(dangerousBillboard.getWidth() +"|"+ dangerousBillboard.getHeight() +"|"+ dangerousBillboard.isInUse()+"|"+dangerousBillboard.getBrand() +"\n");
 				
 			}
 		}

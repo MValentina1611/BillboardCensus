@@ -3,16 +3,12 @@ package ui;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 import model.InfrastructureDepartment;
 
 public class Main {
 
-	public static final int EXIT_OPTION = 5;
 	private Scanner reader;
 	private InfrastructureDepartment inDep;
 	
@@ -74,7 +70,7 @@ public class Main {
 				break;
 	
 			case 3:
-				System.out.println("Dangerous report");
+				exportDangerousReport();
 				break;
 		
 			case 4:
@@ -98,7 +94,7 @@ public class Main {
 		"Example: 300 <width> ++ 400 <height> ++ true <is in Use> ++ Caracol <brand>" );
 			
 		billboardInfo = br.readLine();
-			
+		//br.close();		
 		if(billboardInfo != null )
 		{
 			String [] info = billboardInfo.split("\\+\\+");
@@ -112,13 +108,13 @@ public class Main {
 			inDep.loadBillboard();
 			inDep.saveBillboards();
 		}	
-				
+			
 		return addConfirm;
 	}
 	
 	public void showBillboards() throws IOException
 	{
-		inDep.importData();
+		//inDep.importData();
 		System.out.println("\t\t\t_________________");
 		System.out.println("\t\t\tBILLBOARDS");
 		System.out.println("\t\t\t_________________");
@@ -134,10 +130,25 @@ public class Main {
         	
         }
 		
+        System.out.println("\n\tTOTAL " + inDep.getBillboards().size() + " billboards");
 	}
 	
-	public void exportDangerousReport()
+	public void exportDangerousReport() throws IOException
 	{
+		inDep.exportDangerousBillboardReport();
+		int count = 0;
+		System.out.println("\t\t\t===========================");
+		System.out.println("\t\t\tDANGEROUS BILLBOARD REPORT");
+		System.out.println("\t\t\t===========================");
+		
+		for(int i = 0; i < inDep.getDangerousBillboards().size(); i ++)
+		{ 
+			count++;
+	    	System.out.println( "\t"+count+ " Billboard " +inDep.getDangerousBillboards().get(i).getBrand()+" with area " + 
+	    	inDep.getBillboards().get(i).calculateArea(inDep.getBillboards().get(i).getWidth(), inDep.getBillboards().get(i).getHeight()));
+
+		}
+
 		
 	}
 

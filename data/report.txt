@@ -1,0 +1,103 @@
+955.0|300.0|true|Auctor Quis Tristique Corp.
+937.0|234.0|true|Hendrerit Institute
+498.0|338.0|false|Risus Morbi LLC
+266.0|593.0|false|Ac Metus Incorporated
+655.0|180.0|true|Sociis Natoque Corporation
+508.0|487.0|true|Neque Industries
+729.0|316.0|true|Dui Fusce Aliquam Consulting
+258.0|404.0|false|In Ltd
+906.0|213.0|false|Orci Associates
+810.0|194.0|false|Sed Neque Sed Corp.
+340.0|254.0|true|Est Mollis Ltd
+898.0|395.0|true|Nonummy Ultricies Associates
+273.0|296.0|true|Commodo Tincidunt Nibh Associates
+463.0|358.0|true|Et Corporation
+338.0|290.0|true|Aenean Incorporated
+512.0|269.0|true|Mauris Consulting
+976.0|415.0|false|Arcu Vestibulum Foundation
+686.0|116.0|true|Tincidunt Corporation
+717.0|393.0|true|Libero At Incorporated
+867.0|548.0|false|Erat Eget Tincidunt PC
+410.0|517.0|false|A Aliquet Vel Consulting
+630.0|144.0|true|Suspendisse Company
+373.0|153.0|true|Nonummy Ac Associates
+861.0|167.0|true|Integer In Foundation
+592.0|449.0|true|Dui Semper Et Industries
+497.0|131.0|true|Iaculis Corp.
+726.0|600.0|true|Nec Tellus Nunc Consulting
+976.0|470.0|false|Rutrum Lorem LLP
+969.0|230.0|false|Sed Libero Proin LLC
+711.0|316.0|false|A Mi Fringilla PC
+400.0|599.0|true|Sed Est Nunc Ltd
+431.0|454.0|false|Mauris Ut Mi Institute
+448.0|136.0|true|Vel Corp.
+576.0|537.0|false|Commodo Limited
+622.0|196.0|false|Nulla Ante Iaculis Company
+384.0|219.0|true|Risus Donec Egestas Incorporated
+662.0|346.0|false|Enim Nec LLP
+614.0|565.0|false|Eu Foundation
+401.0|151.0|false|Libero Nec Ligula Limited
+384.0|460.0|false|Sagittis Inc.
+606.0|260.0|true|Sociis Ltd
+520.0|514.0|true|Consequat Dolor Vitae LLP
+900.0|217.0|true|Et Ultrices Foundation
+250.0|516.0|false|Leo Institute
+534.0|588.0|false|Vivamus Consulting
+825.0|557.0|false|Lacus Limited
+727.0|431.0|false|Augue Ac Ipsum LLP
+685.0|535.0|false|Dolor Dapibus Gravida Incorporated
+385.0|312.0|true|Amet Risus Donec Corporation
+897.0|521.0|false|Vestibulum Mauris PC
+825.0|568.0|true|Nulla Eget Metus Consulting
+406.0|391.0|true|Varius Nam Ltd
+564.0|355.0|true|Blandit Enim Consequat Consulting
+301.0|332.0|true|Sed Pharetra LLP
+678.0|394.0|false|Egestas LLC
+464.0|210.0|false|Amet Consectetuer Foundation
+675.0|292.0|true|Vehicula Aliquet Libero Foundation
+678.0|304.0|true|Nam Nulla Magna Ltd
+624.0|217.0|true|Sagittis PC
+969.0|422.0|true|Mauris Ut Consulting
+457.0|154.0|false|Eu Foundation
+399.0|418.0|true|Tincidunt Congue Turpis Consulting
+848.0|519.0|false|Malesuada Institute
+833.0|211.0|true|Sagittis Placerat Institute
+405.0|576.0|false|Vivamus LLC
+587.0|240.0|true|Tellus Lorem Foundation
+982.0|323.0|false|Tellus Institute
+931.0|597.0|true|Luctus Sit Foundation
+834.0|250.0|true|Gravida Limited
+806.0|520.0|false|Vulputate Lacus Cras Inc.
+732.0|221.0|true|Nunc Corp.
+411.0|304.0|false|Eros Nam LLC
+377.0|583.0|true|Accumsan Neque Et Industries
+668.0|488.0|true|Ornare Tortor At Corp.
+666.0|562.0|true|Nec Urna Consulting
+461.0|523.0|true|Arcu Eu LLC
+844.0|192.0|false|Tincidunt Incorporated
+570.0|205.0|false|Aliquet Sem Ut Foundation
+204.0|331.0|true|Facilisi Sed Consulting
+458.0|460.0|true|Lobortis Tellus Incorporated
+844.0|562.0|false|Ut Consulting
+687.0|569.0|true|Donec Institute
+805.0|429.0|true|Mattis Corporation
+370.0|552.0|false|Consectetuer Corporation
+985.0|239.0|false|Sed Hendrerit LLC
+755.0|193.0|true|A Aliquet Vel Associates
+351.0|339.0|true|Turpis In PC
+635.0|210.0|true|Leo Morbi Neque Inc.
+898.0|440.0|true|Nunc Sed Libero Foundation
+212.0|507.0|true|Cursus Diam Corp.
+921.0|505.0|true|Dapibus LLP
+241.0|386.0|false|Sapien Imperdiet Ornare Inc.
+212.0|455.0|false|Feugiat Tellus Lorem Institute
+218.0|286.0|true|Lorem Ipsum PC
+205.0|407.0|true|Metus Eu Corp.
+242.0|255.0|true|Lacus Nulla Corp.
+923.0|389.0|false|Gravida Praesent LLC
+808.0|470.0|true|Sagittis Semper Nam Ltd
+293.0|543.0|true|Curabitur Dictum Phasellus Associates
+813.0|315.0|false|Eu Nibh Limited
+300.0|400.0|true|Caracol
+500.0|400.0|false|RCN
+200.0|100.0|true|Jumbo

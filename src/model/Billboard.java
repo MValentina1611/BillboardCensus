@@ -14,7 +14,7 @@ public class Billboard implements Serializable  {
 	private double height;
 	private boolean inUse;
 	private String brand;
-	//private double area;
+
 	//Builder
 	
 	public Billboard(double width, double height, boolean inUse, String brand ) {
